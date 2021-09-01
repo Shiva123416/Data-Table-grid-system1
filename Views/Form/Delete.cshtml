@@ -1,0 +1,73 @@
+﻿@model EcommerceGrid.Models.ProductName
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<br>
+
+<h2 class="text-info">Delete Product Type</h2>
+<form asp-action="Delete" method="post">
+    <div class="p-4 rounded border">
+        <input type="hidden" asp-for="Id">
+        <div asp-validation-summary="ModelOnly" class="text-danger">
+
+        </div>
+        <div class="form group row">
+            <div class="col-2">
+                <label asp-for="ProductType"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="ProductType" readonly="readonly" class="form-control">
+            </div>
+            <spam asp-validation-for="ProductType" class="text-danger"></spam>
+        </div>
+        <br>
+        <div class="form group row">
+            <div class="col-2">
+                <label asp-for="ProductNumber"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="ProductNumber" readonly="readonly" class="form-control">
+            </div>
+            <spam asp-validation-for="ProductNumber" class="text-danger"></spam>
+        </div>
+        <br>
+        <div class="form group row">
+            <div class="col-2">
+                <label asp-for="ProductSubcategory"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="ProductSubcategory" readonly="readonly" class="form-control">
+            </div>
+            <spam asp-validation-for="ProductSubcategory" class="text-danger"></spam>
+        </div>
+        <br>
+        <div class="form group row">
+            <div class="col-2">
+                <label asp-for="StandardCost"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="StandardCost" readonly="readonly" class="form-control">
+            </div>
+            <spam asp-validation-for="StandardCost" class="text-danger"></spam>
+        </div>
+        <br>
+        <div class="form group row">
+            <div class="col-2">
+                <label asp-for="ListPrice"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="ListPrice" readonly="readonly" class="form-control">
+            </div>
+            <spam asp-validation-for="ListPrice" class="text-danger"></spam>
+        </div>
+        <br>
+        <div class="form-group">
+            <input type="submit" class="btn btn-danger" value="Delete">
+            <a asp-action="Index" class="btn btn-success">Back to List</a>
+        </div>
+    </div>
+</form>
+
+
+

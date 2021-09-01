@@ -1,0 +1,67 @@
+﻿@using EcommerceGrid.Models;
+@model IEnumerable<ProductName>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<br><br>
+<div class="row">
+    <div class="col-6">
+        <h2 class="text-info">Product Type List</h2>
+    </div>
+    <div class="col-6 text-right">
+        <a asp-action="Create" class="btn btn-info">New Product Type</a>
+    </div>
+</div>
+
+<br>
+<div>
+    <table class="table table-striped border" id="myTable">
+        <thead>
+            <tr class="table-info">
+                <th>
+                    @Html.DisplayNameFor(c => c.ProductType)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(c => c.ProductNumber)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(c => c.ProductSubcategory)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(c => c.StandardCost)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(c => c.ListPrice)
+                </th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+       
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.ProductType</td>
+                    <td>@item.ProductNumber</td>
+                    <td>@item.ProductSubcategory</td>
+                    <td>@item.StandardCost</td>
+                    <td>@item.ListPrice</td>
+                    <td>
+                        <partial name="_ButtonPartial" model="@item.Id">
+                    </td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+</div>
+
+@section scripts{
+<script type="text/javascript">
+      $(document).ready(function () {
+          $('#myTable').DataTable();
+    });
+</script>
+}
